@@ -16,7 +16,7 @@ RUN cd ~/iBrew/source/ && make setuplin && ln -s ~/iBrew/ibrew /usr/local/bin/ib
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-COPY ibrew-web /usr/src/app/
+COPY app /usr/src/app/
 RUN ls /usr/src/app/
 
 RUN npm install
