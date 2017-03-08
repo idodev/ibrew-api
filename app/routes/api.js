@@ -5,7 +5,7 @@ var cmd = require('node-cmd');
 /* GET users listing. */
 router.get('/start', function(req, res, next) {
   cmd.get(
-    'ibrew heat 100 10 192.168.0.34',
+    'ibrew heat 100 10 ' + process.env.IKETTLE_IP,
     function(data) {
       res.send(data);
     }
@@ -14,7 +14,7 @@ router.get('/start', function(req, res, next) {
 
 router.get('/stop', function(req, res, next) {
   cmd.get(
-    'ibrew stop 192.168.0.34',
+    'ibrew stop ' + process.env.IKETTLE_IP,
     function(data) {
       res.send(data);
     }
@@ -23,7 +23,7 @@ router.get('/stop', function(req, res, next) {
 
 router.get('/status', function(req, res, next) {
   cmd.get(
-    'ibrew status 192.168.0.34',
+    'ibrew status ' + process.env.IKETTLE_IP,
     function(data) {
       res.send(data);
     }
